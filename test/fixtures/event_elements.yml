@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starting_at: 
+  due_date: 
+  created_at: 
+  updated_at: 
+  name: MyString
+  reminder: 
+
+two:
+  starting_at: 
+  due_date: 
+  created_at: 
+  updated_at: 
+  name: MyString
+  reminder: 

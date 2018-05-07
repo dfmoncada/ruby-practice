@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activities</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Starting at</th>
+      <th>Finished at</th>
+      <!-- <th>Created at</th> -->
+      <!-- <th>Updated at</th> -->
+      <th>Description</th>
+      <th>Event element</th>
+      <th>Measured value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= nullable_date_to_string(activity.starting_at) %></td>
+        <td><%= nullable_date_to_string(activity.finished_at) %></td>
+        <!-- <td><%= activity.created_at %></td> -->
+        <!-- <td><%= activity.updated_at %></td> -->
+        <td><%= activity.description %></td>
+        <td><%= link_to activity.event_element.name, activity.event_element %></td>
+        <td><%= activity.measured_value %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_activity_path %>

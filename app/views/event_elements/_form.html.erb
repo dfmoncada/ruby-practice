@@ -1,0 +1,55 @@
+<%= form_with(model: event_element, local: true) do |form| %>
+  <% if event_element.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event_element.errors.count, "error") %> prohibited this event_element from being saved:</h2>
+
+      <ul>
+      <% event_element.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :starting_at %>
+    <%= form.datetime_select :starting_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_date %>
+    <%= form.datetime_select :due_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_element %>
+    <%= collection_select(:activity, :event_element, EventElement.all, :id, :name) %>
+
+
+  </div>
+
+
+<!--   <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :updated_at %>
+    <%= form.datetime_select :updated_at %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reminder %>
+    <%= form.text_field :reminder %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
