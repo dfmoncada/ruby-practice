@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_05_06_182709) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: :cascade do |t|
     t.datetime "starting_at"
     t.datetime "finished_at"

@@ -22,7 +22,7 @@ t_abs = ActivityType.create(name:'abdominal crunches', unit_id:u_reps.id)
 t_jogg_d = ActivityType.create(name:'jogging-distance', unit_id:u_kms.id)
 t_jogg_t = ActivityType.create(name:'jogging-time', unit_id: u_mins.id)
 t_elip = ActivityType.create(name:'eliptica', unit_id: u_mins.id)
-t_date = ActivityType.create(name:'date', unit_id:u_reps)
+t_date = ActivityType.create(name:'dates majo', unit_id: u_reps.id)
 
 Activity.create(starting_at: Time.new(2018,5,4,23,00),finished_at: Time.new(2018,5,4,23,45) ,name:'first abs',event_element_id:ee_exer.id,measured_value:10,type_id:t_abs.id)
 Activity.create(starting_at: Time.new(2018,5,5,13,00),finished_at: Time.new(2018,5,5,13,30) ,name:'2nd sess',event_element_id:ee_exer.id,measured_value:15,type_id:t_abs.id)
